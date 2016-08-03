@@ -21,17 +21,118 @@
 	    <h2>План</h2>
 
 		<ol>
-			<li>Наблюдатель [Observer] (шаблон проектирования)</li>
-			<li>Реализация в клиентских библиотеках</li>
 			<li>
-				Описание модуля <code>events</code> в nodejs
+				Описание шаблона проектирования Наблюдатель [Observer]
 			</li>
-			<li>Использование в других модулях</li>
+			<li>
+				Примеры в клиентских библиотеках (<code>addEventListener</code>, <code>jQuery.on</code>)
+			</li>
+			<li>
+				Описание модуля <code>events</code> в Node.js. Класс <code>EventEmitter</code>.
+			</li>
+			<li>
+				Методы экземпляра класса <code>EventEmitter</code>
+			</li>
+			<li>
+				Модули <code>Node.js</code> использующие <code>EventEmitter</code>
+			</li>
 			<li>Материалы</li>
 			<li>Задание</li>
 		</ol>
 	</section>
 	<!-- План (end) -->
+
+
+	<!-- Описание шаблона проектирования Наблюдатель [Observer] (begin) -->
+	<section class="slide">
+	    <h2>Описание шаблона проектирования Наблюдатель [Observer]</h2>
+
+	    <p></p>
+	</section>
+	<!-- Описание шаблона проектирования Наблюдатель [Observer] (end) -->
+
+
+	<!-- Примеры в клиентских библиотеках (begin) -->
+	<section class="slide">
+	    <h2>Примеры в клиентских библиотеках</h2>
+
+	    <p></p>
+	</section>
+	<!-- Примеры в клиентских библиотеках (end) -->
+
+	<!-- Класс EventEmitter (begin) -->
+	<section class="slide">
+	    <h2>Класс EventEmitter</h2>
+
+	    <p>свойство <code>defaultMaxListeners</code></p>
+		<p>событие <code>newListener</code></p>
+	</section>
+	<!-- Класс EventEmitter (end) -->
+
+	<!-- Методы экземпляра класса EventEmitter (begin) -->
+	<section class="slide">
+	    <h2>Методы экземпляра класса EventEmitter</h2>
+
+		<ul>
+			<li><code>on</code>, <code>once</code></li>
+			<li><code>prependListener</code>, <code>prependOnceListener</code></li>
+			<li><code>emit</code></li>
+			<li><code>eventNames</code></li>
+			<li><code>removeListener</code>, <code>removeAllListeners</code></li>
+			<li><code>getMaxListeners</code>, <code>setMaxListeners</code></li>
+		</ul>
+	</section>
+	<!-- Методы экземпляра класса EventEmitter (end) -->
+
+	<!-- Модули Node.js использующие EventEmitter (begin) -->
+	<section class="slide">
+	    <h2>Модули Node.js, использующие EventEmitter</h2>
+
+		<ul>
+			<li><strong>http.ClientRequest</strong>:
+				<code>"connect"</code>,
+				<code>"response"</code>,
+				<code>"abort"</code>
+			</li>
+			<li><strong>net.Server</strong>:
+				<code>"connection"</code>,
+				<code>"error"</code>,
+				<code>"listening"</code>,
+				<code>"close"</code>
+			</li>
+			<li><strong>stream.Readable</strong>:
+				<code>"data"</code>,
+				<code>"error"</code>,
+				<code>"end"</code>,
+				<code>"close"</code>
+			</li>
+			<li><strong>fs.ReadStream</strong>:
+				<code>"open"</code>,
+				<code>"close"</code>
+			</li>
+			<li><strong>process</strong></li>
+			<li><strong>Worker</strong></li>
+		</ul>
+	</section>
+	<!-- Модули Node.js использующие EventEmitter (end) -->
+
+
+	<!-- Материалы (begin) -->
+	<section class="slide">
+	    <h2>Материалы</h2>
+
+	    <p></p>
+	</section>
+	<!-- Материалы (end) -->
+
+
+	<!-- Задание (begin) -->
+	<section class="slide">
+	    <h2>Задание</h2>
+
+	    <p></p>
+	</section>
+	<!-- Задание (end) -->
 
 	<p class="badge">
 		<a href="https://github.com/shower/shower">Fork me on GitHub</a>
