@@ -6,6 +6,10 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
+
+  <link rel="stylesheet" href="css/prism.css">
+  <link rel="stylesheet" href="css/prism-fix.css">
+  <link rel="stylesheet" href="css/netology.css">
 </head>
 <body class="shower list">
 	<header class="caption">
@@ -48,7 +52,8 @@
 	    <h2>Описание шаблона проектирования Наблюдатель [Observer]</h2>
 
 	    <p></p>
-	</section>
+
+  </section>
 	<!-- Описание шаблона проектирования Наблюдатель [Observer] (end) -->
 
 
@@ -56,9 +61,38 @@
 	<section class="slide">
 	    <h2>Примеры в клиентских библиотеках</h2>
 
-	    <p></p>
+	    <h3>js DOM</h3>
+      <pre>
+        <code class="language-javascript line-numbers">
+        var button = document.querySelector('.button-selector');
+
+        button.addEventLIstener('click',
+          function() {
+            /* код обработчика */
+          }
+        );
+      </code>
+      </pre>
 	</section>
 	<!-- Примеры в клиентских библиотеках (end) -->
+
+  <!-- Примеры в клиентских библиотеках 2 (begin) -->
+  <section class="slide">
+    <h2>Примеры в клиентских библиотеках</h2>
+
+    <h3>js DOM</h3>
+    <pre>
+        <code class="language-javascript line-numbers">
+        var button = $('.button-selector');
+        var handler = function() {};
+
+        button.on('click', handler);
+        button.trigger('click', eventData);
+        button.off('click');
+      </code>
+      </pre>
+  </section>
+  <!-- Примеры в клиентских библиотеках 2 (end) -->
 
 	<!-- Класс EventEmitter (begin) -->
 	<section class="slide">
@@ -143,7 +177,7 @@
 		-->
 	<div class="progress"></div>
 	<script src="shower/shower.min.js"></script>
-	<!-- Copyright © 2015 Yours Truly, Famous Inc. -->
-	<!-- Photos by John Carey, fiftyfootshadows.net -->
+
+  <script src="js/prism.js?v=2"></script>
 </body>
 </html>
