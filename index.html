@@ -88,7 +88,8 @@
     );
   </code></pre>
 
-</section><section class="slide">
+</section>
+<section class="slide">
   <h2>Наблюдатель [Observer]</h2>
 
   <ul>
@@ -144,11 +145,12 @@
 <section class="slide">
   <h2 class="shout">Node.js</h2>
 </section>
-<!-- Node.js (end) -->ћ
+<!-- Node.js (end) -->
 
 <!-- Класс EventEmitter (begin) -->
 <section class="slide">
   <h2>Класс EventEmitter</h2>
+  <p><a href="https://nodejs.org/dist/latest-v6.x/docs/api/events.html">API Doc: events</a></p>
 
   <p>свойство <code>defaultMaxListeners</code></p>
   <p>событие <code>newListener</code></p>
@@ -169,6 +171,27 @@
   </ul>
 </section>
 <!-- Методы экземпляра класса EventEmitter (end) -->
+
+<!-- emitter.on (begin) -->
+<section class="slide">
+  <h2>emitter.on</h2>
+  <p>Вызывает обработчик события <strong>каждый раз</strong> при событии.</p>
+  <p>Параметры:</p>
+  <ul >
+    <li>{String} имя события, обычно camelCase</li>
+    <li>{Function} обработчик</li>
+  </ul>
+
+  <pre style="font-size: .8em;"><code class="language-javascript line-numbers">
+      const EventEmitter = require('events');
+      const myEmitter = new EventEmitter();
+
+      myEmitter.on('myEvent', (data) => {
+        console.log(`Произошло событие my-event, данные: ${data}`);
+      });
+    </code></pre>
+</section>
+<!-- emitter.on (end) -->
 
 <!-- Модули Node.js использующие EventEmitter (begin) -->
 <section class="slide">
