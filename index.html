@@ -108,13 +108,14 @@
   <h3>js DOM</h3>
   <pre>
         <code class="language-javascript line-numbers">
-        var button = document.querySelector('.button-selector');
+        let button = document.querySelector('.selector');
+        let clickHandler = function(e) { /* код обработчика */ };
 
-        button.addEventLIstener('click',
-          function() {
-            /* код обработчика */
-          }
-        );
+        // Подписаться на клик по кнопке
+        button.addEventListener('click', clickHandler);
+
+        // Отписаться от клика
+        button.removeEventListener('click', clickHandler);
       </code>
       </pre>
 </section>
@@ -124,15 +125,16 @@
 <section class="slide">
   <h2>Примеры в клиентских библиотеках</h2>
 
-  <h3>js DOM</h3>
+  <h3>jQuery</h3>
   <pre>
         <code class="language-javascript line-numbers">
-        var button = $('.button-selector');
-        var handler = function() {};
-
-        button.on('click', handler);
-        button.trigger('click', eventData);
-        button.off('click');
+        $(document).bind("ajaxSend", function() {
+          // показать лоадер
+          $("#loading").show();
+        }).bind("ajaxComplete", function() {
+          // скрыть лоадер
+          $("#loading").hide();
+        });
       </code>
       </pre>
 </section>
