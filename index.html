@@ -175,11 +175,11 @@
 <!-- emitter.on (begin) -->
 <section class="slide">
   <h2>emitter.on</h2>
-  <p>Вызывает обработчик события <strong>каждый раз</strong> при событии.</p>
+  <p>Добавляет обработчик события, вызываемый <strong>каждый раз</strong> при событии.</p>
   <p>Параметры:</p>
   <ul >
     <li>{String} имя события, обычно camelCase</li>
-    <li>{Function} обработчик</li>
+    <li>{Function} обработчик (добавляется в конец)</li>
   </ul>
 
   <pre style="font-size: .8em;"><code class="language-javascript line-numbers">
@@ -192,6 +192,24 @@
     </code></pre>
 </section>
 <!-- emitter.on (end) -->
+
+<!-- emitter.once (begin) -->
+<section class="slide">
+  <h2>emitter.once</h2>
+  <p>Тоже, что и emitter.on, но обработчик события будет вызван <strong>один раз</strong>.</p>
+</section>
+<!-- emitter.once (end) -->
+
+<!-- emitter.prependListener (begin) -->
+<section class="slide">
+  <h2>emitter.prependListener</h2>
+  <p>Тоже, что и<code> emitter.on</code>, но добавляет обработчик перед остальными.</p>
+
+  <h2>emitter.prependOnceListener</h2>
+  <p>Тоже, что и <code>emitter.prependListener</code>, но обработчик вызывается один раз</p>
+</section>
+<!-- emitter.prependListener (end) -->
+
 
 <!-- Модули Node.js использующие EventEmitter (begin) -->
 <section class="slide">
