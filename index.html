@@ -176,7 +176,8 @@
 <section class="slide">
   <h2>emitter.on</h2>
   <p>Добавляет обработчик события, вызываемый <strong>каждый раз</strong> при событии.</p>
-  <p>Параметры:</p>
+  <p>Параметры (<a
+    href="https://nodejs.org/dist/latest-v6.x/docs/api/events.html#events_emitter_on_eventname_listener">api</a>):</p>
   <ul >
     <li>{String} имя события, обычно camelCase</li>
     <li>{Function} обработчик (добавляется в конец)</li>
@@ -187,7 +188,7 @@
       const myEmitter = new EventEmitter();
 
       myEmitter.on('myEvent', (data) => {
-        console.log(`Произошло событие my-event, данные: ${data}`);
+        console.log(`Произошло событие myEvent, данные: ${data}`);
       });
     </code></pre>
 </section>
@@ -196,7 +197,20 @@
 <!-- emitter.once (begin) -->
 <section class="slide">
   <h2>emitter.once</h2>
-  <p>Тоже, что и emitter.on, но обработчик события будет вызван <strong>один раз</strong>.</p>
+  <p>Тоже, что и <code>emitter.on</code>, но обработчик события будет вызван <strong>один раз</strong>.</p>
+
+  <pre><code class="language-javascript line-numbers">
+     myEmitter.once('myEvent', (data) => {
+        console.log(`Произошло событие myEvent, ${data}`);
+      });
+
+     myEmitter.emit('myEvent', 'Привет, Мир!');
+     // console.log: Произошло событие myEvent, Привет, Мир!
+
+     myEmitter.emit('myEvent', 'Еще раз, Привет, Мир!');
+     // ничего не произойдет
+
+  </code></pre>
 </section>
 <!-- emitter.once (end) -->
 
@@ -205,10 +219,27 @@
   <h2>emitter.prependListener</h2>
   <p>Тоже, что и<code> emitter.on</code>, но добавляет обработчик перед остальными.</p>
 
-  <h2>emitter.prependOnceListener</h2>
-  <p>Тоже, что и <code>emitter.prependListener</code>, но обработчик вызывается один раз</p>
+  <pre><code class="language-javascript line-numbers">
+    myEmitter.on('myEvent', (data) => {
+      console.log(`Произошло событие myEvent, сообщение: ${data.message}`);
+    });
+
+    myEmitter.prependListener('myEvent', () => {
+      console.log(`Последним добавлен — первым вызван`);
+    });
+  </code></pre>
+
+  <p>emitter.prependOnceListener — тоже, что и <code>emitter.prependListener</code>, но обработчик вызывается один раз</p>
 </section>
 <!-- emitter.prependListener (end) -->
+
+<!-- emitter.emit (begin) -->
+<section class="slide">
+  <h2>emitter.emit</h2>
+  <p></p>
+</section>
+<!-- emitter.emit (end) -->
+
 
 
 <!-- Модули Node.js использующие EventEmitter (begin) -->

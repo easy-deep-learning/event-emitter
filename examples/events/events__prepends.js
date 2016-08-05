@@ -5,8 +5,8 @@ myEmitter.on('myEvent', (data) => {
   console.log(`Произошло событие myEvent, сообщение: ${data.message}`);
 });
 
-myEmitter.on('myEvent', () => {
-  console.log(`Последним добавлен — последним вызван`);
+myEmitter.prependListener('myEvent', () => {
+  console.log(`Последним добавлен — первым вызван`);
 });
 
 myEmitter.emit('myEvent', {message: "Привет, Мир!"});
