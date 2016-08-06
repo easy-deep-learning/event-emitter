@@ -325,6 +325,57 @@
 <!-- emitter.removeAllListeners (end) -->
 
 
+<!-- emitter.getMaxListeners (begin) -->
+<section class="slide">
+  <h2>emitter.<code>getMaxListeners</code></h2>
+  <p><code>emitter.getMaxListeners()</code></p>
+  <p>Возвращает максимальное количество обработчиков, которое можно добавить к <code>emitter</code>.</p>
+  <p class="next">По умолчанию — 10.</p>
+  <p class="next">При привышении количества — предупреждение в консоли.
+    <br>
+    <code style="color: #ee9900;">
+    Warning: Possible EventEmitter memory leak detected.
+    Use emitter.setMaxListeners() to increase limit.
+    </code>
+  </p>
+  <p class="next">Цель — экономия памяти и быстродействие.</p>
+</section>
+<!-- emitter.getMaxListeners (end) -->
+
+
+<!-- emitter.setMaxListeners (begin) -->
+<section class="slide">
+  <h2>emitter.<code>setMaxListeners</code></h2>
+  <p><code>emitter.setMaxListeners(n)</code></p>
+  <p>Устанавливает значение максимального количества обработчиков,
+    которое можно добавить к <code>emitter</code>
+  </p>
+  <p>Параметры</p>
+  <ul>
+    <li>{Number} <code>n</code> — значение максимального количества обработчиков </li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>emitter.<code>setMaxListeners</code>, пример</h2>
+  <pre><code class="language-javascript line-numbers">
+    myEmitter.setMaxListeners(3);
+
+    myEmitter.on('myEvent_1', () => {});
+    myEmitter.on('myEvent_1', () => {});
+    myEmitter.on('myEvent_1', () => {});
+    myEmitter.on('myEvent_1', () => {});
+    // Warning: Possible EventEmitter memory leak detected.
+    // 4 myEvent_1 listeners added.
+    // Use emitter.setMaxListeners()
+    // to increase limit
+
+
+  </code></pre>
+</section>
+<!-- emitter.setMaxListeners (end) -->
+
+
 
 <!-- Модули Node.js использующие EventEmitter (begin) -->
 <section class="slide">
