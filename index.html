@@ -240,14 +240,29 @@
   <h2>emitter.<code>emit</code></h2>
   <p><code>emitter.emit(eventName[, arg1][, arg2][, ...])
   </code></p>
-  <p>Вызывает событие <code>eventName</code>, можно передать параметры <code>arg1, arg2, ...</code></p>
+  <p>Вызывает событие <code>eventName</code>, <br> можно передать данные <code>arg1, arg2, ...</code></p>
   <p>Параметры (<a
     href="https://nodejs.org/dist/latest-v6.x/docs/api/events.html#events_emitter_emit_eventname_arg1_arg2">api</a>):</p>
   <ul >
     <li>{String} имя события, обычно camelCase</li>
     <li>{*} данные</li>
   </ul>
+</section>
 
+<section class="slide">
+  <h2>emitter.<code>emit</code>, пример</h2>
+
+  <pre><code class="language-javascript line-numbers">
+    const EventEmitter = require('events');
+    const myEmitter = new EventEmitter();
+
+
+    /**
+     * {String} "myEvent" — Имя события
+     * {*} "Привет, Мир!" — Данные события
+     */
+     myEmitter.emit('myEvent', "Привет, Мир!");
+  </code></pre>
 </section>
 
 
