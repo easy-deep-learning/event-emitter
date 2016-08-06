@@ -273,14 +273,56 @@
   <h2>emitter.<code>eventNames</code></h2>
   <p>Возвращает массив событий, для которых были добавлены обработчики.</p>
   <pre><code class="language-javascript line-numbers">
-    myEE.on('myEvent_1', () => {});
-    myEE.on('myEvent_2', () => {});
+    myEmitter.on('myEvent_1', () => {});
+    myEmitter.on('myEvent_2', () => {});
 
-    console.log("myEE.eventNames: ", myEE.eventNames());
-    // log:  myEE.eventNames:  [ 'myEvent_1', 'myEvent_2' ]
+    console.log("eventNames: ", myEmitter.eventNames());
+    // log:  eventNames:  [ 'myEvent_1', 'myEvent_2' ]
   </code></pre>
 </section>
 <!-- emitter.eventNames (end) -->
+
+<!-- emitter.removeListener (begin) -->
+<section class="slide">
+  <h2>emitter.<code>removeListener</code></h2>
+  <code>emitter.removeListener(eventName, listener)</code>
+  <p>Удаляет обработчик <code>listener</code> события <code>eventName</code></p>
+  <p>Параметры</p>
+  <ul>
+    <li>{String} <code>eventName</code> — имя события</li>
+    <li>{Function} <code>listener</code> — обработчик</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>emitter.<code>removeListener</code>, пример</h2>
+  <pre><code class="language-javascript line-numbers">
+    // Обработчик нужно сохранить в переменную
+    let myListener = (message) => { console.log(message); };
+
+    // Добавить обработчик события `myEvent`
+    myEmitter.on('myEvent', myListener);
+
+    // Удалить обработчик события `myEvent`
+    myEmitter.removeListener('myEvent', myListener);
+  </code></pre>
+</section>
+<!-- emitter.removeListener (end) -->
+
+<!-- emitter.removeAllListeners (begin) -->
+<section class="slide">
+  <h2>emitter.<code>removeAllListeners</code></h2>
+  <p>Удаляет все обработчики событий</p>
+
+  <pre><code class="language-javascript line-numbers">
+    myEmitter.on('myEvent_1', () => {});
+    myEmitter.on('myEvent_2', () => {});
+    myEmitter.on('myEvent_3', () => {});
+
+    myEmitter.removeAllListeners();
+  </code></pre>
+</section>
+<!-- emitter.removeAllListeners (end) -->
 
 
 
