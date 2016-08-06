@@ -9,5 +9,5 @@ myEmitter.on('myEvent', () => {
   console.log(`Последним добавлен — последним вызван`);
 });
 
-myEmitter.emit('myEvent', {message: "Привет, Мир!"});
+myEmitter.emit('myEvent', {message: 'Привет, Мир!'});
 

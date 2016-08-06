@@ -130,13 +130,13 @@
   <pre>
         <code class="language-javascript line-numbers">
         $(document)
-          .on("ajaxSend", function() {
+          .on('ajaxSend', function() {
             // показать лоадер
-            $("#loading").show();
+            $('#loading').show();
           })
-          .on("ajaxComplete", function() {
+          .on('ajaxComplete', function() {
             // скрыть лоадер
-            $("#loading").hide();
+            $('#loading').hide();
         });
       </code>
       </pre>
@@ -180,9 +180,9 @@
   <p>Добавляет обработчик события, вызываемый <strong>каждый раз</strong> при событии.</p>
   <p>Параметры (<a
     href="https://nodejs.org/dist/latest-v6.x/docs/api/events.html#events_emitter_on_eventname_listener">api</a>):</p>
-  <ul >
+  <ul style="font-size: .8em;">
     <li>{String} имя события, обычно camelCase</li>
-    <li>{Function} обработчик (добавляется в конец)</li>
+    <li>{Function} обработчик (добавляется в конец), вызывается согласно порядку добавления</li>
   </ul>
 
   <pre style="font-size: .8em;"><code class="language-javascript line-numbers">
@@ -219,7 +219,7 @@
 <!-- emitter.prependListener (begin) -->
 <section class="slide">
   <h2>emitter.<code>prependListener</code></h2>
-  <p>Тоже, что и<code> emitter.on</code>, но добавляет обработчик перед остальными.</p>
+  <p>Тоже, что и <code>emitter.on</code>, но добавляет обработчик перед остальными.</p>
 
   <pre><code class="language-javascript line-numbers">
     myEmitter.on('myEvent', (data) => {
@@ -231,7 +231,7 @@
     });
   </code></pre>
 
-  <p>emitter.prependOnceListener — тоже, что и <code>emitter.prependListener</code>, но обработчик вызывается один раз</p>
+  <p><code>emitter.prependOnceListener</code> — обработчик вызывается один раз</p>
 </section>
 <!-- emitter.prependListener (end) -->
 
@@ -258,10 +258,10 @@
 
 
     /**
-     * {String} "myEvent" — Имя события
-     * {*} "Привет, Мир!" — Данные события
+     * {String} 'myEvent' — Имя события
+     * {*} 'Привет, Мир!' — Данные события
      */
-     myEmitter.emit('myEvent', "Привет, Мир!");
+     myEmitter.emit('myEvent', 'Привет, Мир!');
   </code></pre>
 </section>
 
@@ -276,7 +276,7 @@
     myEmitter.on('myEvent_1', () => {});
     myEmitter.on('myEvent_2', () => {});
 
-    console.log("eventNames: ", myEmitter.eventNames());
+    console.log('eventNames: ', myEmitter.eventNames());
     // log:  eventNames:  [ 'myEvent_1', 'myEvent_2' ]
   </code></pre>
 </section>
@@ -414,7 +414,11 @@
 <section class="slide">
   <h2>Материалы</h2>
 
-  <p></p>
+  <ul>
+    <li><a href="https://nodejs.org/dist/latest-v6.x/docs/api/events.html">Documentation: Events</a></li>
+    <li><a href="https://ru.wikipedia.org/wiki/Наблюдатель_(шаблон_проектирования)">Наблюдатель_(шаблон_проектирования)</a></li>
+    <li><a href="https://www.youtube.com/watch?v=oOgXm3voVno">Скринкаст: События, EventEmitter и утечки памяти</a></li>
+  </ul>
 </section>
 <!-- Материалы (end) -->
 
