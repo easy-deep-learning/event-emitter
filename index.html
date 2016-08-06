@@ -265,8 +265,22 @@
   </code></pre>
 </section>
 
-
 <!-- emitter.emit (end) -->
+
+
+<!-- emitter.eventNames (begin) -->
+<section class="slide">
+  <h2>emitter.<code>eventNames</code></h2>
+  <p>Возвращает массив событий, для которых были добавлены обработчики.</p>
+  <pre><code class="language-javascript line-numbers">
+    myEE.on('myEvent_1', () => {});
+    myEE.on('myEvent_2', () => {});
+
+    console.log("myEE.eventNames: ", myEE.eventNames());
+    // log:  myEE.eventNames:  [ 'myEvent_1', 'myEvent_2' ]
+  </code></pre>
+</section>
+<!-- emitter.eventNames (end) -->
 
 
 
