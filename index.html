@@ -126,17 +126,17 @@
 <section class="slide">
   <h2>Примеры в клиентских библиотеках</h2>
 
-  <h3>jQuery</h3>
+  <p><a href="http://api.jquery.com/on/">jquery.on</a></p>
   <pre>
         <code class="language-javascript line-numbers">
         $(document)
           .on("ajaxSend", function() {
-          // показать лоадер
-          $("#loading").show();
+            // показать лоадер
+            $("#loading").show();
           })
           .on("ajaxComplete", function() {
-          // скрыть лоадер
-          $("#loading").hide();
+            // скрыть лоадер
+            $("#loading").hide();
         });
       </code>
       </pre>
@@ -238,15 +238,26 @@
 <!-- emitter.emit (begin) -->
 <section class="slide">
   <h2>emitter.<code>emit</code></h2>
-  <p></p>
+  <p><code>emitter.emit(eventName[, arg1][, arg2][, ...])
+  </code></p>
+  <p>Вызывает событие <code>eventName</code>, можно передать параметры <code>arg1, arg2, ...</code></p>
+  <p>Параметры (<a
+    href="https://nodejs.org/dist/latest-v6.x/docs/api/events.html#events_emitter_emit_eventname_arg1_arg2">api</a>):</p>
+  <ul >
+    <li>{String} имя события, обычно camelCase</li>
+    <li>{*} данные</li>
+  </ul>
+
 </section>
+
+
 <!-- emitter.emit (end) -->
 
 
 
 <!-- Модули Node.js использующие EventEmitter (begin) -->
 <section class="slide">
-  <h2>Модули Node.js, использующие EventEmitter</h2>
+  <h2>Модули Node.js, использующие <code>EventEmitter</code></h2>
 
   <ul>
     <li><strong>http.ClientRequest</strong>:
