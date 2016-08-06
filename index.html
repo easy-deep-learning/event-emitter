@@ -273,14 +273,107 @@
   <h2>emitter.<code>eventNames</code></h2>
   <p>Возвращает массив событий, для которых были добавлены обработчики.</p>
   <pre><code class="language-javascript line-numbers">
-    myEE.on('myEvent_1', () => {});
-    myEE.on('myEvent_2', () => {});
+    myEmitter.on('myEvent_1', () => {});
+    myEmitter.on('myEvent_2', () => {});
 
-    console.log("myEE.eventNames: ", myEE.eventNames());
-    // log:  myEE.eventNames:  [ 'myEvent_1', 'myEvent_2' ]
+    console.log("eventNames: ", myEmitter.eventNames());
+    // log:  eventNames:  [ 'myEvent_1', 'myEvent_2' ]
   </code></pre>
 </section>
 <!-- emitter.eventNames (end) -->
+
+<!-- emitter.removeListener (begin) -->
+<section class="slide">
+  <h2>emitter.<code>removeListener</code></h2>
+  <code>emitter.removeListener(eventName, listener)</code>
+  <p>Удаляет обработчик <code>listener</code> события <code>eventName</code></p>
+  <p>Параметры</p>
+  <ul>
+    <li>{String} <code>eventName</code> — имя события</li>
+    <li>{Function} <code>listener</code> — обработчик</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>emitter.<code>removeListener</code>, пример</h2>
+  <pre><code class="language-javascript line-numbers">
+    // Обработчик нужно сохранить в переменную
+    let myListener = (message) => { console.log(message); };
+
+    // Добавить обработчик события `myEvent`
+    myEmitter.on('myEvent', myListener);
+
+    // Удалить обработчик события `myEvent`
+    myEmitter.removeListener('myEvent', myListener);
+  </code></pre>
+</section>
+<!-- emitter.removeListener (end) -->
+
+<!-- emitter.removeAllListeners (begin) -->
+<section class="slide">
+  <h2>emitter.<code>removeAllListeners</code></h2>
+  <p>Удаляет все обработчики событий</p>
+
+  <pre><code class="language-javascript line-numbers">
+    myEmitter.on('myEvent_1', () => {});
+    myEmitter.on('myEvent_2', () => {});
+    myEmitter.on('myEvent_3', () => {});
+
+    myEmitter.removeAllListeners();
+  </code></pre>
+</section>
+<!-- emitter.removeAllListeners (end) -->
+
+
+<!-- emitter.getMaxListeners (begin) -->
+<section class="slide">
+  <h2>emitter.<code>getMaxListeners</code></h2>
+  <p><code>emitter.getMaxListeners()</code></p>
+  <p>Возвращает максимальное количество обработчиков, которое можно добавить к <code>emitter</code>.</p>
+  <p class="next">По умолчанию — 10.</p>
+  <p class="next">При привышении количества — предупреждение в консоли.
+    <br>
+    <code style="color: #ee9900;">
+    Warning: Possible EventEmitter memory leak detected.
+    Use emitter.setMaxListeners() to increase limit.
+    </code>
+  </p>
+  <p class="next">Цель — экономия памяти и быстродействие.</p>
+</section>
+<!-- emitter.getMaxListeners (end) -->
+
+
+<!-- emitter.setMaxListeners (begin) -->
+<section class="slide">
+  <h2>emitter.<code>setMaxListeners</code></h2>
+  <p><code>emitter.setMaxListeners(n)</code></p>
+  <p>Устанавливает значение максимального количества обработчиков,
+    которое можно добавить к <code>emitter</code>
+  </p>
+  <p>Параметры</p>
+  <ul>
+    <li>{Number} <code>n</code> — значение максимального количества обработчиков </li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>emitter.<code>setMaxListeners</code>, пример</h2>
+  <pre><code class="language-javascript line-numbers">
+    myEmitter.setMaxListeners(3);
+
+    myEmitter.on('myEvent_1', () => {});
+    myEmitter.on('myEvent_1', () => {});
+    myEmitter.on('myEvent_1', () => {});
+    myEmitter.on('myEvent_1', () => {});
+    // Warning: Possible EventEmitter memory leak detected.
+    // 4 myEvent_1 listeners added.
+    // Use emitter.setMaxListeners()
+    // to increase limit
+
+
+  </code></pre>
+</section>
+<!-- emitter.setMaxListeners (end) -->
 
 
 
