@@ -9,5 +9,5 @@ myEmitter.prependListener('myEvent', () => {
   console.log(`Последним добавлен — первым вызван`);
 });
 
-myEmitter.emit('myEvent', {message: "Привет, Мир!"});
+myEmitter.emit('myEvent', {message: 'Привет, Мир!'});
 

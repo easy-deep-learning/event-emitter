@@ -5,8 +5,8 @@ myEmitter.once('myEvent', (data) => {
   console.log(`Произошло событие myEvent, сообщение: ${data.message}`);
 });
 
-myEmitter.emit('myEvent', {message: "Привет, Мир!"});
+myEmitter.emit('myEvent', {message: 'Привет, Мир!'});
 
 // Не будет выведено
-myEmitter.emit('myEvent', {message: "Еще раз, Привет, Мир!"});
+myEmitter.emit('myEvent', {message: 'Еще раз, Привет, Мир!'});
 
