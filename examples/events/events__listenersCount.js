@@ -1,6 +1,9 @@
 const EventEmitter = require('events');
 const myEmitter = new EventEmitter();
 
+console.log('EventEmitter: ', EventEmitter.defaultMaxListeners);
+// 10
+
 myEmitter.setMaxListeners(3);
 
 myEmitter.on('myEvent_1', () => {});

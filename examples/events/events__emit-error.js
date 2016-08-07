@@ -3,7 +3,7 @@ const myEmitter = new EventEmitter();
 
 myEmitter.on('someEvent', () => console.log('some event happened'));
 
-let emitType = 'errorHandled';
+let emitType = 'error';
 
 setTimeout(() => {
   myEmitter.emit('someEvent');

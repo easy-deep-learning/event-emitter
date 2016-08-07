@@ -145,7 +145,7 @@
 
 <!-- Node.js (begin) -->
 <section class="slide">
-  <h2 class="shout">Node.js</h2>
+  <h2 class="shout">Node.js: Теория</h2>
 </section>
 <!-- Node.js (end) -->
 
@@ -153,9 +153,21 @@
 <section class="slide">
   <h2>Класс <code>EventEmitter</code></h2>
   <p><a href="https://nodejs.org/dist/latest-v6.x/docs/api/events.html">API Doc: events</a></p>
+  <p>Пример использования:</p>
+  <pre style="font-size: .6em;"><code class="language-javascript line-numbers">
+    // В версиях до 4.0.0:
+    // require('events').EventEmitter
+    const EventEmitter = require('events');
 
-  <p>свойство <code>defaultMaxListeners</code></p>
-  <p>событие <code>newListener</code></p>
+    // Создать объект-экземпляр (instance)
+    const myEmitter = new EventEmitter();
+
+    // Добавить обработчик _до_ вызова события
+    myEmitter.on('myEvent', (message) => { console.log(message) });
+
+    // Вызов (trigger) события
+    myEmitter.emit('myEvent', 'Привет, Мир!');
+  </code></pre>
 </section>
 <!-- Класс EventEmitter (end) -->
 
@@ -269,11 +281,17 @@
 
 <!-- emitter.emit(error) (begin) -->
 <section class="slide">
-  <h2>emitter.emit('error')</h2>
+  <h2>emitter.<code>emit('error')</code></h2>
   <p>Если не перехватить событие <code>error</code>, то оно выбросит исключение,
     которое остановит программу</p>
   <pre><code class="language-javascript line-numbers">
-    emitter.emit('error')
+    emitter.emit('error');
+    // events.js:1
+    //  throw err;
+    //  ^
+    //
+    // log: Error: Uncaught, unspecified "error" event.
+    // Программа завершилась.
   </code></pre>
 </section>
 <!-- emitter.emit(error) (end) -->
