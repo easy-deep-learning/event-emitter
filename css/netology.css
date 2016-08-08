@@ -422,4 +422,17 @@ address {
   font-weight: bold;
   font-size: 36px;
 }
+
+.chapter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.chapter h2 {
+  font-size: 86px;
+  width: 100%;
+}
+
 /* End */
