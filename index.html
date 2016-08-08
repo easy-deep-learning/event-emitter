@@ -254,8 +254,9 @@
   </code></p>
   <p>Вызывает событие <code>eventName</code>, <br> можно передать данные <code>arg1, arg2, ...</code></p>
   <p>Параметры (<a
-    href="https://nodejs.org/dist/latest-v6.x/docs/api/events.html#events_emitter_emit_eventname_arg1_arg2">api</a>):</p>
-  <ul >
+    href="https://nodejs.org/dist/latest-v6.x/docs/api/events.html#events_emitter_emit_eventname_arg1_arg2">api</a>):
+  </p>
+  <ul>
     <li>{String} имя события, обычно camelCase</li>
     <li>{*} данные</li>
   </ul>
@@ -295,7 +296,6 @@
   </code></pre>
 </section>
 <!-- emitter.emit(error) (end) -->
-
 
 
 <!-- emitter.eventNames (begin) -->
@@ -364,8 +364,8 @@
   <p class="next">При привышении количества — предупреждение в консоли.
     <br>
     <code style="color: #ee9900;">
-    Warning: Possible EventEmitter memory leak detected.
-    Use emitter.setMaxListeners() to increase limit.
+      Warning: Possible EventEmitter memory leak detected.
+      Use emitter.setMaxListeners() to increase limit.
     </code>
   </p>
   <p class="next">Цель — экономия памяти и быстродействие.</p>
@@ -382,7 +382,7 @@
   </p>
   <p>Параметры</p>
   <ul>
-    <li>{Number} <code>n</code> — значение максимального количества обработчиков </li>
+    <li>{Number} <code>n</code> — значение максимального количества обработчиков</li>
   </ul>
 </section>
 
@@ -412,7 +412,6 @@
   <p><a href="./examples/app/chat.js">chat.js</a></p>
 </section>
 <!-- Пример программы (end) -->
-
 
 
 <!-- Модули Node.js использующие EventEmitter (begin) -->
@@ -454,7 +453,9 @@
 
   <ul>
     <li><a href="https://nodejs.org/dist/latest-v6.x/docs/api/events.html">Documentation: Events</a></li>
-    <li><a href="https://ru.wikipedia.org/wiki/Наблюдатель_(шаблон_проектирования)">Наблюдатель_(шаблон_проектирования)</a></li>
+    <li><a
+      href="https://ru.wikipedia.org/wiki/Наблюдатель_(шаблон_проектирования)">Наблюдатель_(шаблон_проектирования)</a>
+    </li>
     <li><a href="https://www.youtube.com/watch?v=oOgXm3voVno">Скринкаст: События, EventEmitter и утечки памяти</a></li>
   </ul>
 </section>
@@ -463,15 +464,53 @@
 
 <!-- Задания (begin) -->
 <section class="slide">
-  <h2>Задания</h2>
+  <h2>Домашнее Задание</h2>
 
   <p>Доработать <a href="./examples/app/chat.js">chat.js</a></p>
 
-  <ul>
-    <li></li>
-    <li></li>
-    <li></li>
-  </ul>
+  <h3>Задание 1</h3>
+
+  <p>1.1 Добавить обработчик события <code>message</code> для Чата Вебинара (<code>webinarChat</code>),
+    который выводит в консоль сообщение 'Готовлюсь к ответу'.
+    Обработчик создать в отдельной функции.</p>
+
+  <p>1.2 Для вконтакте (<code>vkChat</code>) установить максимальное
+    количество обработчиков событий, равное 2.</p>
+
+  <p>1.3 Добавить обработчик 'Готовлюсь к ответу' из пп. 1.1 к чату вконтакте.</p>
+
+</section>
+
+<section class="slide">
+  <h2>Домашнее Задание</h2>
+
+  <p>Доработать <a href="./examples/app/chat.js">chat.js</a></p>
+
+  <h3>Задание 2</h3>
+
+  <p>2.1 В классе чата <code>ChatApp</code> добавить метод <code>close</code>,
+    который будет вызывать событие <code>close</code>
+    (событие вызывается один раз, <code>setInterval</code> как в констукторе, не нужен).</p>
+
+  <p>2.2 Для чата вконтакте (<code>vkChat</code>) добавить обработчик <code>close</code>,
+    выводящий в консоль текст "Чат вконтакте закрылся :(".</p>
+
+  <p>2.3 Вызывать у чата вконтакте метод <code>close()</code>.</p>
+
+</section>
+
+<section class="slide">
+  <h2>Домашнее Задание</h2>
+
+  <p>Доработать <a href="./examples/app/chat.js">chat.js</a></p>
+
+  <h3>Задание 3</h3>
+
+  <p>Добавить код, который через 30 секунд отписывает <code>chatOnMessage</code>
+    от вебинара <code>webinarChat</code>.
+  </p>
+  <p>* Задание со звездочкой (дополнительное) — разбить существующий код на модули,
+    запускаемый файл должен быть <code>index.js</code></p>
 
 </section>
 <!-- Задания (end) -->
